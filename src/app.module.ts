@@ -14,7 +14,7 @@ import { CatsService } from './cats/cats.service';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     MongooseModule.forRoot(
-      'mongodb+srv://aryan13:!j2TqLqm@cluster0.lxjvp.mongodb.net/nest?retryWrites=true&w=majority',
+      `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.lxjvp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
     ),
     CatsModule,
   ],
